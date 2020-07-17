@@ -27,16 +27,18 @@ namespace KilseicBott
             LastNMoves = new List<Move>();
             N = 4;
         }
-        public Move MakeMove(Gamestate gamestate) 
-        { 
+        public Move MakeMove(Gamestate gamestate)
+        {
             if (gamestate.GetRounds().Length == 0)
                 return Move.R;
             List<Round> allRounds = gamestate.GetRounds().ToList();
             UpdateLastNMoves(allRounds);
             if (allRounds.Last().GetP2() == Move.D)
                 EnemyDynSticks--;
-            if (LastNMoves.All(o => o == LastNMoves[0]) & LastNMoves.Count == N)
+            if (LastNMoves.All(o => o == LastNMoves[0]) & LastNMoves.Count >= N)
                 return CounterMove(LastNMoves[0]);
+            if (RandomInstance.RandomInstance.Next(100) == 0)
+                N = RandomInstance.RandomInstance.Next(3, 6);
             if (allRounds.Count > 1 & !DrawTools.FirstDraw)
                 if (allRounds[allRounds.Count - 2].GetP1() == allRounds[allRounds.Count - 2].GetP2())
                     DrawTools.UpdateDrawCounter(allRounds, EnemyDynSticks);
@@ -61,7 +63,7 @@ namespace KilseicBott
 
         private void UpdateLastNMoves(List<Round> allRounds)
         {
-            if (LastNMoves.Count == N)
+            while (LastNMoves.Count+1 > N)
                 LastNMoves.RemoveAt(0);
             LastNMoves.Add(allRounds.Last().GetP2());
         }
