@@ -62,12 +62,12 @@ namespace KilseicBott
                     return Move.D;
                 }
                 if (!counterValid | enemyDynSticks == 0)
-                    return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(),1,5);
+                    return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(),1,4);
                 if ("Water" == highestChanceMove)
                     return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(),1,10);
                 if ("Dynamite" == highestChanceMove)
-                    return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(includeWater: true),1,5);
-                return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(),1,4);
+                    return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(includeWater: true),1,4);
+                return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(),1,5);
             }
             
             private Move NoDynamiteLeft(string highestChanceMove, bool counterValid, int enemyDynSticks)

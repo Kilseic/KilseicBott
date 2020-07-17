@@ -11,9 +11,6 @@ namespace KilseicBott
     public class KilseicBott : IBot
 
     {
-        //private int MyScore;
-        //private int RoundCounter; 
-        //private int MatchLength;
         private Draw DrawTools; 
         private int SticksODynamite; 
         private int EnemyDynSticks;
@@ -21,9 +18,6 @@ namespace KilseicBott
         
         public KilseicBott()
         {
-            //MyScore = 0;
-            //RoundCounter = 0; 
-            //MatchLength = 2000; 
             DrawTools = new Draw();
             SticksODynamite = 97; 
             EnemyDynSticks = 100;
@@ -31,9 +25,6 @@ namespace KilseicBott
         }
         public Move MakeMove(Gamestate gamestate) 
         { 
-            /*RoundCounter++;
-            if (RoundCounter % 100 == 0) 
-                UpdateMatchLength();*/
             if (gamestate.GetRounds().Length == 0)
                 return Move.R;
             List<Round> allRounds = gamestate.GetRounds().ToList();
