@@ -1,0 +1,11 @@
+C:\Work\Training\Bookish\KilseicBott\KilseicBott\bin\Release\netcoreapp2.1\KilseicBott.deps.json
+C:\Work\Training\Bookish\KilseicBott\KilseicBott\bin\Release\netcoreapp2.1\KilseicBott.dll
+C:\Work\Training\Bookish\KilseicBott\KilseicBott\bin\Release\netcoreapp2.1\KilseicBott.pdb
+C:\Work\Training\Bookish\KilseicBott\KilseicBott\bin\Release\netcoreapp2.1\BotInterface.dll
+C:\Work\Training\Bookish\KilseicBott\KilseicBott\obj\Release\netcoreapp2.1\KilseicBott.csprojAssemblyReference.cache
+C:\Work\Training\Bookish\KilseicBott\KilseicBott\obj\Release\netcoreapp2.1\KilseicBott.AssemblyInfoInputs.cache
+C:\Work\Training\Bookish\KilseicBott\KilseicBott\obj\Release\netcoreapp2.1\KilseicBott.AssemblyInfo.cs
+C:\Work\Training\Bookish\KilseicBott\KilseicBott\obj\Release\netcoreapp2.1\KilseicBott.csproj.CoreCompileInputs.cache
+C:\Work\Training\Bookish\KilseicBott\KilseicBott\obj\Release\netcoreapp2.1\KilseicBott.csproj.CopyComplete
+C:\Work\Training\Bookish\KilseicBott\KilseicBott\obj\Release\netcoreapp2.1\KilseicBott.dll
+C:\Work\Training\Bookish\KilseicBott\KilseicBott\obj\Release\netcoreapp2.1\KilseicBott.pdb
