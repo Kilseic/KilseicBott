@@ -11,6 +11,7 @@ namespace KilseicBott
         public int DrawStreak;
         public int DrawUpdate;
         public RandomMoves RandomInstance;
+        public bool IncludeWater;
 
         public Draw()
         {
@@ -19,12 +20,19 @@ namespace KilseicBott
             DrawStreak = 0; 
             DrawUpdate = 0; 
             RandomInstance = new RandomMoves();
+            IncludeWater = false;
         }
         public void UpdateDrawCounter(List<Round> allRounds, int enemyDynSticks)
         {
             DrawUpdate++;
             if (DrawUpdate == 15)
             {
+                string highestChanceMove = DrawCounter.Aggregate((x,
+                    y) => x.Value > y.Value ? x : y).Key;
+                if (highestChanceMove == "Water")
+                    IncludeWater = true;
+                else
+                    IncludeWater = false;
                 DrawCounter = new Dictionary<string,int>(){{"RPS", 0},{"Dynamite", 0},{"Water", 0}};
                 DrawUpdate = 0;
             }
@@ -59,12 +67,12 @@ namespace KilseicBott
                 }
                 if (DrawStreak == 4)
                 {
-                    return Move.D;
+                    return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(),2,3);
                 }
                 if (!counterValid | enemyDynSticks == 0)
-                    return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(),1,4);
+                    return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(IncludeWater),1,6);
                 if ("Water" == highestChanceMove)
-                    return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(),1,10);
+                    return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(),1,15);
                 if ("Dynamite" == highestChanceMove)
                     return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(includeWater: true),1,4);
                 return RandomInstance.DynamiteChanceMove(RandomInstance.RandomMove(),1,5);
