@@ -28,12 +28,12 @@ namespace KilseicBott
             if (gamestate.GetRounds().Length == 0)
                 return Move.R;
             List<Round> allRounds = gamestate.GetRounds().ToList();
-            if (allRounds[allRounds.Count - 1].GetP2() == Move.D)
+            if (allRounds.Last().GetP2() == Move.D)
                 EnemyDynSticks--;
             if (allRounds.Count > 1 & !DrawTools.FirstDraw)
                 if (allRounds[allRounds.Count - 2].GetP1() == allRounds[allRounds.Count - 2].GetP2())
                     DrawTools.UpdateDrawCounter(allRounds, EnemyDynSticks);
-            if (allRounds[allRounds.Count - 1].GetP1() == allRounds[allRounds.Count - 1].GetP2())
+            if (allRounds.Last().GetP1() == allRounds.Last().GetP2())
             {
                 Move nextMove = DrawTools.DrawScenario(SticksODynamite,EnemyDynSticks);
                 if (nextMove == Move.D)

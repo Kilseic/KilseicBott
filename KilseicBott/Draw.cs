@@ -28,7 +28,7 @@ namespace KilseicBott
                 DrawCounter = new Dictionary<string,int>(){{"RPS", 0},{"Dynamite", 0},{"Water", 0}};
                 DrawUpdate = 0;
             }
-            switch (allRounds[allRounds.Count - 1].GetP2())
+            switch (allRounds.Last().GetP2())
             {
                 case Move.D:
                     DrawCounter["Dynamite"]++;
